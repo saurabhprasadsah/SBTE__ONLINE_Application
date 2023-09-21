@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0 auto;
+        box-sizing: border-box;
+        font-family:"Calibri, sans-serif";
+        /* border: 1px solid #000; */
+    }
+
+    @media print {
+        th {
+            background-color: #000 !important;
+            color: #fff !important;
+            -webkit-print-color-adjust: exact;
+            text-align: left !important;
+        }
+
+        .highlighted,
+        .tb-lst {
+            border: 1px solid #dddddd !important;
+            padding: 4px 0px !important;
+            font-size: 10px;
+        }
+    }
+    @media print {
+    .footer,
+    #non-printable {
+        display: none !important;
+    }
+    #printable {
+        display: block;
+    }
+}
+    </style>
+</head>       
+            <body> 
+                  <header>  
+                <div style="width:800px;">                
+                    <table id="header" style="margin-bottom: 10px;">
+                        <tr>
+                            <td width="80%">
+                            <h2 style="font-size: 22px;border-bottom: 1px solid #000;text-align: center;"> <b style="text-align: center; font-size: 14px;">REGISTRATION VERIFICATION REPORT</b> <br>  STATE BOARD OF TECHNICAL EDUCATION, BIHAR</h2>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            </td>
+                            <td style="margin-left:40px;"  width="20%"> <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/logo-2.jpg"
+                                alt=""></td>
+                        </tr>
+                    </table>
+
+
+                <table width="100%" style="margin-bottom: 20px;">
+                    <tr>
+                <td width="50%" >
+                    <table>
+                        <tr>
+                            <td width="40%">BRANCH </td>
+                            <td width="60%">: <b>:{{program}}</b></td>
+                        </tr>
+                        <tr>
+                            <td width="40%">INSTITUTE</td>
+                            <td width="60%">: <b>:{{institute}} </b></td>
+                        </tr>
+                        <tr>
+                            <td width="40%">REPORT TIME</td>
+                            <td width="60%">:<b> :{{time}} </b></td>
+                            
+                        </tr>
+                    </table>
+                </td>
+        
+                
+
+                <td width="50%" style="margin-left: 70px;">
+                    <table>
+                        <tr>
+                            <td width="45%"></td>
+                            <td width="55%" ></td>
+                        </tr>
+                            <td  width="45%"></td>
+                            <td width="55%"></td>
+                        </tr>
+                        <tr>
+                            <td  width="45%"></td>
+                            <td width="55%"></td>
+                        </tr>
+                        <tr>
+                            <td  width="45%"> </td>
+                            <td width="55%"></td>
+                        </tr>
+                    </table>
+                </td>
+                    </tr>
+                </table>
+            </header>
+
+                <table width="100%" style="margin:0px 20px;">
+                    <thead>
+                    <tr class="highlighted">
+                        <th width="8%" style="text-align: left;" bgcolor="black">SL.</th>
+                        <th width="16%"  style="text-align: left;" bgcolor="black">Registration No</th>
+                        <th width="18%"  style="text-align: left;" bgcolor="black">Student Name</th>
+                        <th width="18%"  style="text-align: left;" bgcolor="black">Father Name</th>
+                        <th width="15%"  style="text-align: left;" bgcolor="black">Date of Birth </th>
+                        <th width="10%"  style="text-align: left;" bgcolor="black">Type </th>
+                        <th width="15%"  style="text-align: left;" bgcolor="black">Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in details %}
+                    <tr class="highlighted">
+                        <td width="8%">{{ forloop.counter }}</td>
+                        <td width="16%">{{i.reg_no}}</td>
+                        <td width="18%">{{i.student_name}}</td>
+                        <td width="18%">{{i.father_name}} </td>
+                        <td width="15%">{{i.dob}}</td>
+                        <td width="10%">{{i.admission_type}} </td>
+                        {% if i.academic_session == 1 %}
+                        <td width="15%"> 2020 - 2023 </td>
+                        {% elif i.academic_session == 2 %}
+                        <td width="15%"> 2020 - 2023 (LE) </td>
+                        {% elif i.academic_session == 3 %}
+                        <td width="15%"> 2021 - 2024 </td>
+                        {% endif %}
+                 </tr>
+                      {% endfor %}
+                </tbody>
+
+                </table>
+
+                <table style="margin-top: 40px;" id="footer">
+                    <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td width="40%"> </td>
+                            <td width="55%"></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table>
+                        <tr>
+                            <td width="40%"></td>
+                            <td width="55%">  <p style="margin-left: 70px; ">Principal Signature & Seal</p></td>
+                    </tr>
+                    
+                    </table>
+                </td>
+                    </tr>
+
+                </table>
+               
+                </div>  
+    </body>
+</head>
+</html>

@@ -1,0 +1,589 @@
+{% comment %} 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <pdf:toc />
+    <style>
+    * {
+        margin: 0 auto;
+        box-sizing: border-box;
+        font-family:"Calibri, sans-serif";
+        /* border: 1px solid #000; */
+    }
+
+    @media print {
+        th {
+            background-color: #000 !important;
+            color: #fff !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .highlighted,
+        .tb-lst {
+            border: 1px solid #dddddd !important;
+            text-align: left !important;
+            padding: 8px !important;
+        }
+    }
+    @media print {
+    .footer,
+    #non-printable {
+        display: none !important;
+    }
+    #printable {
+        display: block;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div style="width:800px;">
+    <table style="margin-bottom: 20px;">
+        <tr style="border-bottom:1px solid #000;">
+            <td width="20%"> <img  src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/logo-2.jpg" alt="" style="float: left;"></td>
+            <td width="78%">  <h2 style="text-align: center; " >GOVERNMENT OF BIHAR</h2>
+                <h2 style="text-align: center;">DEPARTMENT OF SCIENCE & TECHNOLOGY</h2>
+                <h1 style="text-align: center; font-size: 22px;">STATE BOARD OF TECHNICAL EDUCATION, BIHAR</h1></td>
+       
+        </tr>
+    </table>
+      
+<table width="100%" style="margin:auto;">
+    <tr>
+<td width="50%" >
+    <table>
+        <tr>
+            <td width="40%">DCECEB/BPTPIA Roll No. </td>
+            <td width="60%">:<b> {{details.class_roll_no}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Name of Branch</td>
+            <td width="60%">: <b>Agricultural Engineering</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Name of Institute</td>
+            <td width="60%">:<b> {{details.institute}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Date of Admission in Institute</td>
+            <td width="60%">:<b> {{details.doj}}</b></td>
+        </tr>
+        <tr>
+            <td width="30%">Aadhaar Number</td>
+            <td width="60%">:<b> {{details.aadhar_number}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Name of Student</td>
+            <td width="60%">:<b> {{details.student_name}} </b></td>
+        </tr>
+        <tr>
+            <td width="40%">Date of Birth</td>
+            <td width="60%">: <b> {{details.dob}} </b></td>
+        </tr>
+        <tr>
+            <td width="40%">Gender</td>
+            <td width="60%">:<b> {{details.gender}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Father's Name</td>
+            <td width="60%">: <b>{{details.father_name}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Mother's Name</td>
+            <td width="60%">: <b>{{details.mother_name}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Mobile Number</td>
+            <td width="60%">: <b>{{details.mobile_no}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Email</td>
+            <td width="60%">: <b>{{details.email}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Communication Address </td>
+            <td width="60%">:<b> {{details.comm_line1}}</b></td>
+        </tr>
+        <tr>
+            <td width="40%">Permanent Address</td>
+            <td width="60%">: <b>{{details.comm_line2}}</b></td>
+        </tr>
+<tr>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+</tr>
+    </table>
+</td>
+
+<td width="50%" style="margin-left: 70px;">
+    <table>
+        <tr>
+            <td width="45%">Session</td>
+            <td width="55%" >:<b>2020 - 2023 (LE)</b></td>
+        </tr>
+            <td  width="45%">Branch Code</td>
+            <td width="55%">:<b> 11</b></td>
+        </tr>
+        <tr>
+            <td  width="45%">Institute Code</td>
+            <td width="55%">:<b> 112 </b></td>
+        </tr>
+        <tr>
+            <td  width="45%">Category </td>
+            <td width="55%">:<b> BC</b></td>
+        </tr>
+        <tr>
+            <td  width="45%">Admission Category</td>
+            <td width="55%">: <b>UNRESERVED</b></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/profile.jpg"
+            style="width:90px; padding-top:44px;" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/sign.jpg" style="width:120px;" alt="">
+            </td>
+        </tr>
+    </table>
+</td>
+    </tr>
+</table>
+
+    <table style="margin:0px 20px;">
+        <tr class="highlighted">
+            <th bgcolor="black">Exam Name</th>
+            <th bgcolor="black">Board/University</th>
+            <th bgcolor="black">School/College </th>
+            <th bgcolor="black">Roll No</th>
+            <th bgcolor="black">Year</th>
+            <th bgcolor="black">Subjects</th>
+            <th bgcolor="black">Result</th>
+            <th bgcolor="black">Marks(%)</th>
+        </tr>
+        <tr class="highlighted">
+            <td class="tb-lst">Theory</td>
+            <td class="tb-lst">2002202</td>
+            <td class="tb-lst">Applied Physics-II</td>
+            <td class="tb-lst">Theory</td>
+            <td class="tb-lst">2002202</td>
+            <td class="tb-lst">Applied Physics-II</td>
+            <td class="tb-lst">22002202</td>
+            <td class="tb-lst">Applied Physics-II</td>
+        </tr>
+    </table>
+
+<table style="margin-top: 40px;">
+    <tr>
+<td>
+    <table>
+        <tr>
+            <td width="40%"> </td>
+            <td width="55%"></td>
+        </tr>
+    </table>
+</td>
+
+<td>
+    <table>
+        <tr>
+            <td width="40%"></td>
+            <td width="55%">  <p style="margin-left: 70px; ">Signature of Candidate</p></td>
+       </tr>
+       
+    </table>
+</td>
+    </tr>
+
+</table>
+
+<!-- new one -->
+
+<table style="margin-top: 20px;">
+    <tr >
+<td>
+    <table>
+        <tr>
+            <td width="40%">Registration Fee </td>
+            <td width="55%">:<b> Rs. 500.0</b></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="40%">Registration Date</td>
+            
+            <td width="55%">: <b>07-Feb-2022</b> </td>
+      </tr>
+    </table>
+</td>
+
+<td>
+    <table>
+        <p><b>For college/office use</b></p>
+        <tr style="margin-bottom:20px;">
+            <td width="30%">Class Roll Number</td>
+            <td width="55%" style="border: 1px solid #000; height: 30px; width:50px;">&nbsp;: <b>456</b></td>
+       
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td width="30%" >Registration Number</td>
+        <td width="60%" style="border: 1px solid #000; height: 30px; width:120px;">&nbsp;:<b>07-Feb-2022</b></td>
+   
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+    </table>
+</td>
+    </tr>
+
+</table>
+<b>NOTE: Please submit your Registration Form till 08-Feb-2022 to the Principal of concerned institute</b>
+&nbsp;
+&nbsp;
+<table>
+    <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/new-bt-ig.PNG" style="width:780px;" alt="">
+</table>
+  
+</div>  
+</body>
+
+</html> {% endcomment %}
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-family: "Calibri, sans-serif";
+            /* border: 1px solid #000; */
+        }
+
+        @media print {
+            /* th {
+            background-color: #000 !important;
+            color: #fff !important;
+            -webkit-print-color-adjust: exact;
+        } */
+
+            .highlighted,
+            .tb-lst {
+                border: 1px solid #dddddd !important;
+                /* text-align: left !important;
+            padding: 8px !important; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width:800px;">
+        <table style="margin-bottom: 20px;">
+            <tr style="border-bottom:1px solid #000;">
+                <td width="20%"> <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/logo-2.jpg"
+                        alt="" style="float: left;"></td>
+                <td width="78%">
+                    <h2 style="text-align: center; ">GOVERNMENT OF BIHAR <br> DEPARTMENT OF SCIENCE & TECHNOLOGY </h2>
+                    <b style=" font-size: 22px; margin-top: 40px;">STATE BOARD OF TECHNICAL EDUCATION, BIHAR</b>
+                    <!-- <h2 style="text-align: center; font-size: 22px;"></h2> -->
+                </td>
+
+            </tr>
+        </table>
+        <table>
+
+        </table>
+        <h2 style="text-align: center; "> <b
+                style="background-color:#000; color:#fff; font-size:18px; padding: 0px 6px;">&nbsp; REGISTRATION FORM
+                &nbsp;</b></h2>
+        <table width="100%" style="margin:auto;">
+
+            <tr>
+                <td width="60%">
+                    <table>
+                        <tr>
+                            <td width="36%">DCECEB/BPTPIA Roll No. </td>
+                            <td width="64%">:<b> 61001896</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Name of Branch</td>
+                            <td width="64%">: <b>Agricultural Engineering</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Name of Institute</td>
+                            <td width="64%">:<b> Government Polytechnic, Bhagalpu</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Date of Admission in Institute</td>
+                            <td width="64%">:<b> 2022-10-02</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Aadhaar Number</td>
+                            <td width="64%">:<b> 465465</b></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Name of Student</td>
+                            <td width="64%">:<b> MANISH KUMAR</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Date of Birth</td>
+                            <td width="64%">: <b>1999-03-13</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Gender</td>
+                            <td width="64%">:<b> M</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Father's Name</td>
+                            <td width="64%">: <b>TANIKLAL MAHTO</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Mother's Name</td>
+                            <td width="64%">: <b>MNAME</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Mobile Number</td>
+                            <td width="64%">: <b>9431033398</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Email</td>
+                            <td width="64%">: <b>sks.nws@gmail.com</b></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Communication Address </td>
+                            <td width="64%">: <b>VILL KOATH, PO KOATH, KOATH, BIHAR, Pin :802216</b></td>
+                        </tr>
+                        <tr>
+                            <td width="36%">Permanent Address</td>
+                            <td width="64%">: <b>VILL KOATH, PO KOATH, KOATH, BIHAR, Pin : 802216</b></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td width="40%" style="margin-left: 50px;">
+                    <table>
+                        <tr>
+                            <td width="50%">Session</td>
+                            <td width="50%">:<b>2020 - 2023</b></td>
+                        </tr>
+                        <td width="50%">Branch Code</td>
+                        <td width="50%">:<b> 11</b></td>
+            </tr>
+            <tr>
+                <td width="50%">Institute Code</td>
+                <td width="50%">:<b> 112 </b></td>
+            </tr>
+            <tr>
+                <td width="50%">Category </td>
+                <td width="50%">:<b> BC</b></td>
+            </tr>
+            <tr>
+                <td width="50%">Admission Category</td>
+                <td width="50%">: <b>UNRESERVED</b></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/profile.jpg"
+                        style="width:90px; padding-top:44px;" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <td>&nbsp;</td>
+            <td width="48%" style="border:2px solid #000; background-color: #dddddd;height: 40px;">
+            </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+           
+           
+        </table>
+        </td>
+        </tr>
+        </table>
+
+        <table>
+            <tr style=" border: 1px solid #000; padding:4px;">
+                <th width="12%">Exam Name</th>
+                <th width="13%">Board/University</th>
+                <th width="20%">School/College </th>
+                <th width="10%">Roll No</th>
+                <th width="10%">Year</th>
+                <th width="23%">Subjects</th>
+                <th width="8%">Result</th>
+                <th width="7%">Marks(%)</th>
+            </tr>
+            <tr style=" border: 1px solid #000;padding:4px;">
+                <td width="12%">MATRIC</td>
+                <td width="13%">BSEB PATNA</td>
+                <td width="20%">J N HIGH SCHOOL KOATH ROHTAS</td>
+                <td width="10%">2000166</td>
+                <td width="10%">2020</td>
+                <td width="20%">HND SKN MATH SCIENCE
+                    SOCIAL SCIENCE ENG </td>
+                <td width="8%">I DIV</td>
+                <td width="7%">84 </td>
+            </tr>
+        </table>
+
+        <table style="margin-top: 40px;">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td width="40%"> </td>
+                            <td width="55%"></td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td>
+                    <table>
+                        <tr>
+                            <td width="40%"></td>
+                            <td width="55%">
+                                <p style="margin-left: 70px; ">Signature of Candidate</p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+
+        <!-- new one -->
+
+        <table style="margin-top: 20px;">
+            <tr>
+                <td width="50%">
+                    <table>
+                        <tr>
+                            <td width="45%">Registration Fee </td>
+                            <td width="55%">:<b> Rs. 500.0</b></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="30%">Registration Date</td>
+
+                            <td width="70%">: <b>07-Feb-2022</b>
+                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td width="50%">
+                    <table>
+                        <p><b>For college/office use</b></p>
+                        <tr style="margin-bottom:20px;">
+                            <td width="30%">Class Roll Number</td>
+                            <!-- <td width="55%" style="border: 1px solid #000; height: 30px; width:50px;">&nbsp;: <b>456</b>
+                            </td> -->
+                            <td width="70%"><table>
+                                <tr>
+                                    <td style="border:1px solid #000">&nbsp;</td>
+                                    <td style="border:1px solid #000">&nbsp;</td>
+                                    <td style="border:1px solid #000">&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    
+                                </tr>
+                            </table></td>
+
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td width="30%">Registration Number</td>
+                            <!-- <td width="60%" style="border: 1px solid #000; height: 30px; width:120px;">
+                                &nbsp;:<b>07-Feb-2022</b></td> -->
+                                <td width="70%">  <table>
+                                    <tr>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                        <td style="border:1px solid #000">&nbsp;</td>
+                                    </tr>
+                                </table></td>
+
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+        <b style="padding-bottom: 30px;">NOTE: Please submit your Registration Form till 08-Feb-2022 to the Principal of concerned institute</b>
+        <table>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+            <img src="https://www.webnetcreatives.com/sbte/SBTE/images/inner-image/new-bt-ig.PNG" style="width:780px;"
+                alt="">
+    
+
+    </div>
+</body>
+
+</html>

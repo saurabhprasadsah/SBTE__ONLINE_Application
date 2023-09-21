@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block body %}
+<style>
+.sel-appo{
+    color: #000 !important;
+    font-weight: 600;
+} 
+</style>
+<body>
+<div class="main-panel">
+    <div class="content-wrapper">
+    <div class="col-lg-12">
+      <div class="card card-secondary mb-4">
+            <div class="card-body d-lg-flex  justify-content-between">     
+            <div>New Registration Verification</div>
+            <div><a href="/dashboard" title="Dashboard">Dashboard </a> / New Registration Verification</div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-12 stretch-card grid-margin">
+        <div class="card">
+        <div class="card-body d-lg-flex  justify-content-between">
+       
+            
+<form method ="get" class="row" action="">
+    <!-- {% csrf_token %} -->
+    <div class="col-lg-4">
+        <div class="form-group-lg select2">
+            <label class="font-weight-bold">Institute</label>
+            <select class="js-example-basic-single" style="width:100%" name="institute_code">
+                <option value= 111></option>    
+                {% for i in institutes %}
+                <option value="{{i.code}}">{{i.code}}-{{i.short_name}}</option>         
+                {% endfor %}
+              
+
+                
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="form-group-lg select2">
+            <label class="font-weight-bold">Program</label>
+            <select class="js-example-basic-single" style="width:100%" name="program_code">
+                <option value=11> </option>
+                {% for i in program %}
+                <option value="{{i.code}}">{{i.code}}--{{i.short_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-2 mt-3">
+        <input type="submit" class="btn btn-rounded btn-info" title="Search" value="Search">
+    </div>
+    <div class="col-lg-2 mt-3">
+         <a class="btn btn-rounded btn-success" href="{% url 'allpdf'  InstID  ProgID %}">All Pdf <i class="icon-cloud-download"></i></a>
+        </button>  
+    </div>
+</form>
+</div>
+            <div class="card-body">
+                <table id="mud" class="table table-bordered">
+                    
+                    <thead>
+                        <tr>
+                            <th>BCECE Roll Number</th>
+                            <th>Student Name </th>
+                            <th>Date Of Birth </th>
+                            <th>Category</th>
+                            <th>Admission Category</th>
+                            <th>Ad Type</th>
+                            <th>Registration Number</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in tasks %}
+                         <tr class="table-info">
+                            <td> {{i.bcece_roll_no}}</td>
+                            <td> {{i.student_name}} </td>
+                            <td> {{i.dob}} </td>
+                            <td> {{i.category}} </td>
+                            <td> {{i.category}} </td>
+                            <td> {{i.admission_type}}</td>
+                            <td> {{i.reg_no}} </td>
+                            <td> 
+                            {% if i.reg_no == 0 %}
+                            <a href="" class="btn btn-sm btn-success" data-toggle="modal" data-target="#exam-assign"
+                            title="Assign">Assign</a>
+                            {% else %}
+                            <a   class="btn btn-sm btn-danger" data-toggle="modal" data-target="#cancel-pop"  class="edit-icon  ml-2"
+                            title="Cancle">Cancel</a> 
+                           
+                            {% comment %} <a  href="{% url 'update' i.id %}" class="btn btn-sm btn-danger" class="edit-icon  ml-2"
+                            title="Cancle">Cancel</a> {% endcomment %}
+  
+                            <a href="{% url 'pdf_report_create' i.reg_no %}" class="edit-icon  ml-2" title="Download PDF">PDF <i class="icon-cloud-download"></i></a> 
+                            </td>
+                            
+                        </tr>
+                        
+      
+    </body>
+    <div class="modal fade " id="exam-assign" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content bg-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> BCECE Roll No. <span> {{i.roll_number}} </span> {{i.student_name}}	</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body model-contentss">
+               
+                <form class="forms-sample" method="GET">
+                     {% comment %} {% for i in tasks %}  {% endcomment %}
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail3" class="font-weight-semibold">Seat Type*</label>
+                        <select class="form-control form-control-sm sel-appo" id="purpose" required="">
+                            <option>-----select------</option>
+                            <option value="0">Approved</option>
+                            <option value="1">Handicapped</option>
+                            <option value="2">Waiver Scheme </option>
+                            <!-- <option value="0">Single</option> -->
+                        </select>
+                    </div>
+                        <div class="form-group">
+                            <label for="user" class="font-weight-semibold">Class Roll Number*</label>
+                            <input type="number" class="form-control form-control-sm"
+                                placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user" class="font-weight-semibold">Is orginal certificate Received*</label>
+                            <input type="text" class="form-control form-control-sm"
+                                placeholder="" required>
+                        </div>
+
+                    <a href="{% url "genrateregistrationnumber" i.id %}" class="btn btn-sm btn-rounded btn-info  mr-2">Yes</a>
+                    <button type="submit" class="btn btn-sm btn-rounded btn-danger  mr-2" data-dismiss="modal"
+                        aria-label="Close">No</button>
+            </div>
+            {% comment %} {% endfor %} {% endcomment %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% comment %} assign popup {% endcomment %}
+
+<div class="modal fade " id="cancel-pop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content bg-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body model-contentss">
+               
+                <form class="forms-sample" method="post" action="/student/{{student.remarks}}">
+                 {% csrf_token %}
+                <p class="font-weight-semibold">Do you want to cancel this Registration</p>
+                        <div class="form-group">
+                            <label for="user">  Remarks</label>
+                            <input type="text" class="form-control form-control-sm" name = 'remarks' id="remarks"
+                                placeholder="Remarks" required>
+                        </div>
+
+                    <a href="{% url 'update' i.id %}" class="btn btn-sm btn-rounded btn-info  mr-2"> Yes</a> 
+                    
+                    <button type="submit" class="btn btn-sm btn-rounded btn-danger  mr-2" data-dismiss="modal"
+                        aria-label="Close">No</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+     {% endif %}
+     {% endfor %}
+
+    {% endblock %}
+   
